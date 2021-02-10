@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9b060409-4cab-4980-9d3c-8bad93cfc7e4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1clZ77VUcbRA6BFZv6miLkrlluv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="pytest for test_thumbnail_maker.test_thumbnail_maker" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="python-concurrency-getting-started" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/03/demos/python-concurrency-getting-started-4cee6c44abb00c9a16ccde4a69ebbea1a9cd2b4b" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_thumbnail_maker.test_thumbnail_maker&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test_thumbnail_maker.test_thumbnail_maker" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b060409-4cab-4980-9d3c-8bad93cfc7e4" name="Default Changelist" comment="" />
+      <created>1591104969124</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591104969124</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1296" height="170" key="GridCell.Tab.0.bottom" timestamp="1591106495591">
+      <screen x="49" y="27" width="1317" height="741" />
+    </state>
+    <state width="1296" height="170" key="GridCell.Tab.0.bottom/49.27.1317.741@49.27.1317.741" timestamp="1591106495591" />
+    <state width="1296" height="170" key="GridCell.Tab.0.center" timestamp="1591106495590">
+      <screen x="49" y="27" width="1317" height="741" />
+    </state>
+    <state width="1296" height="170" key="GridCell.Tab.0.center/49.27.1317.741@49.27.1317.741" timestamp="1591106495590" />
+    <state width="1296" height="170" key="GridCell.Tab.0.left" timestamp="1591106495590">
+      <screen x="49" y="27" width="1317" height="741" />
+    </state>
+    <state width="1296" height="170" key="GridCell.Tab.0.left/49.27.1317.741@49.27.1317.741" timestamp="1591106495590" />
+    <state width="1296" height="170" key="GridCell.Tab.0.right" timestamp="1591106495591">
+      <screen x="49" y="27" width="1317" height="741" />
+    </state>
+    <state width="1296" height="170" key="GridCell.Tab.0.right/49.27.1317.741@49.27.1317.741" timestamp="1591106495591" />
+  </component>
+</project>
