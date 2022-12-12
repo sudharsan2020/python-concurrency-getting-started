@@ -21,7 +21,7 @@ class ThumbnailMakerService(object):
         if not img_url_list:
             return
         os.makedirs(self.input_dir, exist_ok=True)
-        
+
         logging.info("beginning image downloads")
 
         start = time.perf_counter()
@@ -31,7 +31,7 @@ class ThumbnailMakerService(object):
             urlretrieve(url, self.input_dir + os.path.sep + img_filename)
         end = time.perf_counter()
 
-        logging.info("downloaded {} images in {} seconds".format(len(img_url_list), end - start))
+        logging.info(f"downloaded {len(img_url_list)} images in {end - start} seconds")
 
     def perform_resizing(self):
         # validate inputs
@@ -40,10 +40,10 @@ class ThumbnailMakerService(object):
         os.makedirs(self.output_dir, exist_ok=True)
 
         logging.info("beginning image resizing")
-        target_sizes = [32, 64, 200]
         num_images = len(os.listdir(self.input_dir))
 
         start = time.perf_counter()
+        target_sizes = [32, 64, 200]
         for filename in os.listdir(self.input_dir):
             orig_img = Image.open(self.input_dir + os.path.sep + filename)
             for basewidth in target_sizes:
@@ -53,16 +53,15 @@ class ThumbnailMakerService(object):
                 hsize = int((float(img.size[1]) * float(wpercent)))
                 # perform resizing
                 img = img.resize((basewidth, hsize), PIL.Image.LANCZOS)
-                
-                # save the resized image to the output dir with a modified file name 
-                new_filename = os.path.splitext(filename)[0] + \
-                    '_' + str(basewidth) + os.path.splitext(filename)[1]
+
+                # save the resized image to the output dir with a modified file name
+                new_filename = f'{os.path.splitext(filename)[0]}_{str(basewidth)}{os.path.splitext(filename)[1]}'
                 img.save(self.output_dir + os.path.sep + new_filename)
 
             os.remove(self.input_dir + os.path.sep + filename)
         end = time.perf_counter()
 
-        logging.info("created {} thumbnails in {} seconds".format(num_images, end - start))
+        logging.info(f"created {num_images} thumbnails in {end - start} seconds")
 
     def make_thumbnails(self, img_url_list):
         logging.info("START make_thumbnails")
@@ -72,5 +71,5 @@ class ThumbnailMakerService(object):
         self.perform_resizing()
 
         end = time.perf_counter()
-        logging.info("END make_thumbnails in {} seconds".format(end - start))
+        logging.info(f"END make_thumbnails in {end - start} seconds")
     

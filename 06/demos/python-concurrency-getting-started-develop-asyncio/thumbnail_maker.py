@@ -59,7 +59,7 @@ class ThumbnailMakerService(object):
             loop.close()
 
         end = time.perf_counter()
-        logging.info("downloaded {} images in {} seconds".format(len(img_url_list), end - start))
+        logging.info(f"downloaded {len(img_url_list)} images in {end - start} seconds")
 
     def perform_resizing(self):
         # validate inputs
@@ -69,9 +69,8 @@ class ThumbnailMakerService(object):
         target_sizes = [32, 64, 200]
 
         while True:
-            filename = self.img_queue.get()
-            if filename:
-                logging.info("resizing image {}".format(filename))
+            if filename := self.img_queue.get():
+                logging.info(f"resizing image {filename}")
                 orig_img = Image.open(self.input_dir + os.path.sep + filename)
                 for basewidth in target_sizes:
                     img = orig_img
@@ -82,8 +81,7 @@ class ThumbnailMakerService(object):
                     img = img.resize((basewidth, hsize), PIL.Image.LANCZOS)
 
                     # save the resized image to the output dir with a modified file name
-                    new_filename = os.path.splitext(filename)[0] + \
-                        '_' + str(basewidth) + os.path.splitext(filename)[1]
+                    new_filename = f'{os.path.splitext(filename)[0]}_{str(basewidth)}{os.path.splitext(filename)[1]}'
                     out_filepath = self.output_dir + os.path.sep + new_filename
                     img.save(out_filepath)
 
@@ -91,7 +89,7 @@ class ThumbnailMakerService(object):
                         self.resized_size.value += os.path.getsize(out_filepath)
 
                 os.remove(self.input_dir + os.path.sep + filename)
-                logging.info("done resizing image {}".format(filename))
+                logging.info(f"done resizing image {filename}")
                 self.img_queue.task_done()
             else:
                 self.img_queue.task_done()
@@ -112,5 +110,7 @@ class ThumbnailMakerService(object):
             self.img_queue.put(None)
 
         end = time.perf_counter()
-        logging.info("END make_thumbnails in {} seconds".format(end - start))
-        logging.info("Initial size of downloads: [{}]  Final size of images: [{}]".format(self.dl_size, self.resized_size.value))
+        logging.info(f"END make_thumbnails in {end - start} seconds")
+        logging.info(
+            f"Initial size of downloads: [{self.dl_size}]  Final size of images: [{self.resized_size.value}]"
+        )
